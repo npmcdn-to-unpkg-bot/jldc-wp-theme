@@ -1,0 +1,17 @@
+# Meta Design Directory containing misc items not to be included in repository
+/Meta/**/*.psd
+/Meta/**/*.pdf
+
+# Old Gulpfile kept for reference purposes
+gulpfile.old.js
+
+# Compiled CSS and JavaScript Files that are redundant
+builds/dev/style.css
+builds/prod/style.css
+builds/dev/_js/*.js
+builds/prod/_js/*.js
+src/css/style.css
+
+# Theme Languages Directory
+builds/dev/_lang
+builds/prod/_lang
