@@ -134,7 +134,7 @@ gulp.task('images', function() {
 
 gulp.task('js-header', function() {
     gulp.src(project.javascript.header.src)
-        .pipe(concat('header.js'))
+        .pipe(concat('jldc-header.js'))
         .on('error', gutil.log)
         .pipe(gulpif(envType === 'prod', uglify()))
         .pipe(gulp.dest(project.javascript.dest))
@@ -142,7 +142,7 @@ gulp.task('js-header', function() {
 
 gulp.task('js-footer', function() {
     gulp.src(project.javascript.src)
-        .pipe(concat('script.js'))
+        .pipe(concat('jldc-script.js'))
         .on('error', gutil.log)
         .pipe(gulpif(envType === 'prod', uglify()))
         .pipe(gulp.dest(project.javascript.dest))
