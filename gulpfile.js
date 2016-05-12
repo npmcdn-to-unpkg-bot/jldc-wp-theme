@@ -16,8 +16,7 @@ var
     animation    = require('postcss-animation'),
     autoprefixer = require('autoprefixer'),
     cssnano      = require('cssnano'),
-    uglify       = require('gulp-uglify'),
-    watch        = require('gulp-watch');
+    uglify       = require('gulp-uglify');
 
 // Set Environment: 'dev' or 'prod' only acceptable values
 var envType = 'dev';
@@ -171,7 +170,7 @@ gulp.task('sass', function() {
 gulp.task('javascript', ['js-header', 'js-footer']);
 gulp.task('default', ['php-lint', 'sass', 'javascript', 'images', 'watch']);
 
-gulp.task('watch', ['default'], function() {
+gulp.task('watch', function() {
     gulp.watch(project.php.src, ['php-lint']);
     gulp.watch(project.sass.src, ['sass']);
     gulp.watch(project.css.src, ['css']);

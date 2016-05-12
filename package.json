@@ -27,7 +27,6 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-    "gulp-watch": "^4.3.5",
     "postcss": "^5.0.19",
     "postcss-animation": "0.0.8"
   }
