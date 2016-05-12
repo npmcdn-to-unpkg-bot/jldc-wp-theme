@@ -169,7 +169,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('javascript', ['js-header', 'js-footer']);
-gulp.task('default', ['php-lint', 'sass', 'javascript', 'images']);
+gulp.task('default', ['php-lint', 'sass', 'javascript', 'images', 'watch']);
 
 gulp.task('watch', ['default'], function() {
     gulp.watch(project.php.src, ['php-lint']);
