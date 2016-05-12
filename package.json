@@ -20,14 +20,15 @@
     "gulp-concat": "^2.6.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^2.4.0",
+    "gulp-imagemin": "^3.0.1",
     "gulp-phpcs": "^1.0.0",
     "gulp-postcss": "^6.1.0",
-    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "postcss": "^5.0.19",
-    "postcss-animation": "0.0.6"
+    "postcss-animation": "0.0.8"
   }
 }

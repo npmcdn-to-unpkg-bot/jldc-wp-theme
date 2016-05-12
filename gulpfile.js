@@ -10,7 +10,8 @@ var
     imagemin     = require('gulp-imagemin'),
     phpcs        = require('gulp-phpcs'),
     htmlhint     = require('gulp-htmlhint'),
-    sass         = require('gulp-ruby-sass'),
+    sass         = require('gulp-sass'),
+    sourcemaps   = require('gulp-sourcemaps'),
     postcss      = require('gulp-postcss'),
     animation    = require('postcss-animation'),
     autoprefixer = require('autoprefixer'),
@@ -103,12 +104,10 @@ project = {
     sass: {
         dest: './src/css/',
         settings: {
-            compass: true,
             lineNumbers: true,
             precision: 8,
             style: 'expanded',
-            sourcemap: true,
-            require: ['breakpoint', 'susy']
+            sourcemap: true
         },
         src: ['./src/sass/**/*.scss'],
         styleSrc: ['./src/sass/style.scss']
@@ -162,7 +161,9 @@ gulp.task('html-lint', function() {
 });
 
 gulp.task('sass', function() {
-    return sass(project.sass.styleSrc, project.sass.settings)
+    gulp.src(project.sass.styleSrc)
+        .pipe(sass(project.sass.settings))
+        .pipe(sourcemaps.write())
         .on('error', gutil.log)
         .pipe(gulp.dest(project.sass.dest))
 });
