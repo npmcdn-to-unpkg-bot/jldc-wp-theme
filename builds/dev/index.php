@@ -11,7 +11,7 @@
 
 <header id="pageHeader" role="banner">
 	<h1 id="masthead">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/_img/logoMasthead.svg" alt="<?php echo bloginfo( 'name' ); ?>">
+		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/_img/logoMasthead.svg" alt="<?php echo bloginfo( 'name' ); ?>">
 	</h1>
 </header>
 
