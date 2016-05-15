@@ -14,6 +14,18 @@
 	</h1>
 </header>
 
+<nav id="siteNav" role="navigation">
+	<ul id="menuMain" role="menubar">
+		<!-- To be replaced with a WP function to generate page list -->
+		<li role="menuitem" class="menuItem">Home</li>
+		<li role="menuitem" class="menuItem">About</li>
+		<li role="menuitem" class="menuItem">Blog</li>
+		<li role="menuitem" class="menuItem">Portfolio</li>
+		<li role="menuitem" class="menuItem">Contact</li>
+	</ul>
+
+</nav>
+
 <main role="main">
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
