@@ -86,9 +86,9 @@ project = {
     javascript: {
         dest: dirBase + '/_js',
         header: {
-          src: ['./src/javascript/header/*.js']
+          src: ['./src/js/header/*.js']
         },
-        src: ['./src/javascript/plugins/*.js', './src/javascript/*.js']
+        src: ['./src/js/plugins/*.js', './src/js/*.js']
     },
     php: {
        dest: dirBase,
