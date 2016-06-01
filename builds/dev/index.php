@@ -31,7 +31,7 @@
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article class="blogPost">
 				<header class="postHeader">
-					<h2><?php the_title(); ?></h2>
+					<h2><a href="" title=""><?php the_title(); ?></a></h2>
 					<?php if ( get_the_modified_time() === get_the_time() ) : ?>
 						<p>Posted on <time datetime="<?php the_time( 'c' ); ?>"><?php the_date( 'l, F jS, Y' ); ?> at <?php the_time( 'g:ia T' ); ?></time></p>
 					<?php else : ?>
@@ -45,10 +45,26 @@
 
 				</footer>
 			</article>
+
+			<?php if ( ($wp_query->current_post + 1) < ($wp_query->post_count) ) : ?>
+				<hr /> <!-- Placeholder -->
+			<?php endif; ?>
+
 		<?php endwhile; ?>
 		<?php else :
 			esc_html__( 'Sorry, no posts matched your criteria.', 'jldc' );
 	endif; ?>
+
+	<div class="nav_pagination">
+		<?php
+			the_posts_pagination( array(
+				'type'              => 'list',
+				'prev_test'         => __( 'Previous page', 'jldc' ),
+				'next_text'         => __( 'Next page', 'jldc' ),
+				'before_page_numer' => '<span class="screen-reader-text">' . __( 'Page', 'jldc' ) . '</span>',
+			) );
+		?>
+	</div>
 </main>
 
 <footer id="pageFooter" role="contentinfo">
