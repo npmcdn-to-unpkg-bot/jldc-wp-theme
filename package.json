@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "cssnano": "^3.5.2",
+    "cssnano": "^3.6.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-htmlhint": "^0.3.1",
@@ -28,6 +28,6 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "postcss": "^5.0.19",
-    "postcss-animation": "0.0.8"
+    "postcss-animation": "0.0.11"
   }
 }
