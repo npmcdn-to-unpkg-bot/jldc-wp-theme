@@ -22,6 +22,6 @@
   "dependencies": {
     "susy": "^2.2.12",
     "breakpoint-sass": "^2.7.0",
-    "normalize-scss": "^3.0.3"
+    "normalize-scss": "normalize.scss#^5.0.3"
   }
 }
