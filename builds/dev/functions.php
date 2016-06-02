@@ -18,3 +18,15 @@ function jldc_enqueues() {
 }
 
 add_action( 'wp_enqueue_scripts', 'jldc_enqueues' );
+
+function jldc_read_more_link() {
+	return '<a class="more-link" href="' . get_permalink() . '">Continue Reading&#8230;</a>';
+}
+add_filter( 'jldc_read_more_link', 'modify_read_more_link' );
+
+function jldc_excerpt_read_more() {
+	global $post;
+	return '<p><a class="more-link" href="' . get_permalink() . '">Read the Full Article&#8230;</a></p>';
+}
+
+add_filter( 'excerpt_more', 'jldc_excerpt_read_more' );
