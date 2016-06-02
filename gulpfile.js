@@ -162,8 +162,8 @@ gulp.task('html-lint', function() {
 gulp.task('sass', function() {
     gulp.src(project.sass.styleSrc)
         .pipe(sass(project.sass.settings))
-        .pipe(sourcemaps.write())
         .on('error', gutil.log)
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(project.sass.dest))
 });
 
