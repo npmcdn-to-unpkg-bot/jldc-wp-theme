@@ -17,7 +17,23 @@
 			</a>
 		</h1>
 	</header>
-	
+
+	<nav id="siteNave" role="navigation">
+		<?php
+		wp_nav_menu( array(
+			'theme_location'    => 'main-menu',
+			'menu'              => 'Main Menu',
+			'container'         => '',
+			'menu_id'           => 'menuMain',
+			'items_wrap'        => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
+			'before'            => '',
+			'after'             => '',
+			'link_before'       => '<b>',
+			'link_after'        => '</b>',
+		) )
+		?>
+	</nav>
+
 	<nav id="siteNav" role="navigation">
 		<ul id="menuMain" role="menubar">
 			<!-- To be replaced with a WP function to generate page list -->
