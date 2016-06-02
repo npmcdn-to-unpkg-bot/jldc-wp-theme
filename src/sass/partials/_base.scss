@@ -1,7 +1,32 @@
+html {
+  box-sizing: border-box;
+  background-color: $color-primary-blue;
+  font-size: 18px;
+}
+
+#wrapper {
+  max-width: 1250px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 #{headings(1,6)} {
   font-family: $typeface-sansserif;
 }
 
+h2 {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+
+}
+
 p {
   font-family: $typeface-serif;
+}
+
+footer#pageFooter {
+  @include clearfix;
 }
