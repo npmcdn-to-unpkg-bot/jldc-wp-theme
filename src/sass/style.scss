@@ -13,3 +13,15 @@ Text Domain: jldc
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+
+
+
+// Universal Includes
+
+// Set Variables
+@import "partials/variables";
+
+// Normalize CSS
+@import "../../bower_components/support-for/sass/support-for";
+@import "../../bower_components/normalize-scss/fork-versions/default/normalize";
