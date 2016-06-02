@@ -10,7 +10,9 @@
 
 <header id="pageHeader" role="banner">
 	<h1 id="masthead">
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/_img/logoMasthead.svg" alt="<?php echo bloginfo( 'name' ); ?>">
+		<a href="<?php bloginfo( 'url' ); ?>">
+			<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/_img/logoMasthead.svg" alt="<?php echo bloginfo( 'name' ); ?>">
+		</a>
 	</h1>
 </header>
 
@@ -31,7 +33,7 @@
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article class="blogPost">
 				<header class="postHeader">
-					<h2><a href="" title=""><?php the_title(); ?></a></h2>
+					<h2 class="postHeadline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<?php if ( get_the_modified_time() === get_the_time() ) : ?>
 						<p>Posted on <time datetime="<?php the_time( 'c' ); ?>"><?php the_date( 'l, F jS, Y' ); ?> at <?php the_time( 'g:ia T' ); ?></time></p>
 					<?php else : ?>
