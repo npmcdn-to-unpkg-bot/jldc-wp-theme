@@ -119,7 +119,10 @@ gulp.task('css', function() {
         .pipe(postcss([
             animation(),
             autoprefixer({browsers: [project.css.postcss.autoprefix]}),
-            cssnano()
+            cssnano({
+                discardDuplicates: true,
+                mergeRules: true
+            })
         ]))
         .on('error', gutil.log)
         .pipe(gulp.dest(project.css.dest))
