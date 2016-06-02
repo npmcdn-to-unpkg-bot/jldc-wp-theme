@@ -1,8 +1,11 @@
 <?php
 
+// Remove Generator Tag for Security Purposes
+remove_action( 'wp_head', 'wp_generator' );
+
 function jldc_enqueues() {
 	// Register Theme Styles
-	wp_register_style( 'jldc-styles', get_stylesheet_uri() ); // Main style
+	wp_register_style( 'jldc-styles', get_stylesheet_uri(), '', '1.0.0', 'screen' ); // Main style
 
 	// Enqueue Styles
 	wp_enqueue_style( 'jldc-styles' );
