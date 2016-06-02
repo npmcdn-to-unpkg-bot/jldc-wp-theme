@@ -1,0 +1,7 @@
+// Primary Palette
+
+$color-primary-blue:      #336699;
+$color-primary-blue-aaa:  darken($color-primary-blue, 5%); // AAA Contrast at normal height/weight
+
+// Typography Colors
+$color-link-text:         $color-primary-blue-aaa;
