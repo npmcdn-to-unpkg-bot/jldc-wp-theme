@@ -10,6 +10,89 @@
  */
 
 /**
+ * Sets up the theme defaults and activates support for WordPress features. It
+ * uses the after_setup_theme hook since the init hook is too late for certain
+ * features to be activated
+ *
+ * @since JLDC 1.0
+ */
+function jldc_theme_setup() {
+	/*
+	 * Make theme available for translation.
+	 *
+	 * While not really neccessary because  there are no plans to submit this
+	 * theme to the WordPress repository, it still is a good practice to make
+	 * the theme translatable for future reference.
+	 */
+	load_theme_textdomain( 'jldc', get_stylesheet_directory() . '/_lang' );
+
+	// Add default post and comment RSS feed links to the head element
+	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the <title> element dynamically instead of having
+	 * a hard-coded one in the <head> element.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/*
+	 * Enable Post Thumbnail support for pages and posts.
+	 *
+	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	add_theme_support( 'post-thumbnails' );
+	//set_post_thumbnail_size( width, height, crop? );
+
+	// Initializes two instances for wp_nav_menu()
+	function jldc_register_menus() {
+		register_nav_menus(
+			array(
+				'main-menu'     => __( 'Main Menu' ),
+				'footer-menu'   => __( 'Footer Menu' ),
+			)
+		);
+	}
+	add_action( 'init', 'jldc_register_menus' );
+
+	/*
+     * Require external file containing custom navigation walker for
+     * wp_nav_menu() that produces proper ARIA role attributes in menus
+     */
+	require( get_stylesheet_directory() . '/_inc/walker.php' );
+
+	/*
+	 * Set default markup for search form, comment form, and comments
+	 * to be valid HTML5
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+
+	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+		'gallery',
+		'status',
+		'audio',
+		'chat',
+	) );
+
+} // End of jldc_setup()
+add_action( 'after_setup_theme', 'jldc_theme_setup' );
+
+/**
  * Removes the generator metatag for security purposes. This way site
  * visitors cannot see that the site is WordPress nor know its version
  *
@@ -64,27 +147,3 @@ function jldc_excerpt_read_more() {
 	return '<p><a class="more-link" href="' . get_permalink() . '">Read the Full Article&#8230;</a></p>';
 }
 add_filter( 'excerpt_more', 'jldc_excerpt_read_more' );
-
-
-/**
- * Register menus that the WordPress Admin panel will manage
- *
- * @since JLDC Theme 1.0
- */
-function jldc_register_menus() {
-	register_nav_menus(
-		array(
-			'main-menu'     => __( 'Main Menu' ),
-			'footer-menu'   => __( 'Footer Menu' ),
-		)
-	);
-}
-add_action( 'init', 'jldc_register_menus' );
-
-/**
- * Require external file containing custom navigation walker for
- * wp_nav_menu() that produces proper ARIA role attributes in menus
- *
- * @since JLDC Theme 1.0
- */
-require( get_stylesheet_directory() . '/_inc/walker.php' );
