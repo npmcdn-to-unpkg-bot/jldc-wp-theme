@@ -1,76 +1,26 @@
-<!doctype html>
-<html lang="<?php language_attributes(); ?>">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Document</title>
-	<?php wp_head(); ?>
-</head>
-<body>
+<?php
+/**
+ * The primary template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files. It is used to display a page
+ * when nothing specific matches a query. It is also the final fallback
+ * for any other page such as single, page, etc.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage JLDC_Theme
+ * @since JLDC Theme 1.0
+ */
 
-<div id="wrapper">
-
-	<header id="pageHeader" role="banner">
-		<h1 id="masthead">
-			<a href="<?php bloginfo( 'url' ); ?>">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/_img/logoMasthead.svg" alt="<?php echo bloginfo( 'name' ); ?>">
-			</a>
-		</h1>
-	</header>
-
-	<nav id="siteNave" role="navigation">
-		<?php
-		wp_nav_menu( array(
-			'theme_location'    => 'main-menu',
-			'menu'              => 'Main Menu',
-			'container'         => '',
-			'menu_id'           => 'menuMain',
-			'items_wrap'        => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
-			'before'            => '',
-			'after'             => '',
-			'link_before'       => '<b>',
-			'link_after'        => '</b>',
-		) )
-		?>
-	</nav>
-
-	<nav id="siteNav" role="navigation">
-		<ul id="menuMain" role="menubar">
-			<!-- To be replaced with a WP function to generate page list -->
-			<li role="menuitem" class="menuItem">Home</li>
-			<li role="menuitem" class="menuItem">About</li>
-			<li role="menuitem" class="menuItem">Blog</li>
-			<li role="menuitem" class="menuItem">Portfolio</li>
-			<li role="menuitem" class="menuItem">Contact</li>
-		</ul>
-	
-	</nav>
+get_header(); ?>
 	
 	<main role="main">
 		<?php if ( have_posts() ) : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="postHeader">
-						<h2 class="postHeadline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<?php if ( get_the_modified_time() === get_the_time() ) : ?>
-							<p>Posted on <time datetime="<?php the_time( 'c' ); ?>"><?php the_date( 'l, F jS, Y' ); ?> at <?php the_time( 'g:ia T' ); ?></time></p>
-						<?php else : ?>
-							<p>Originally posted on <time datetime="<?php the_time( 'c' ); ?>"><?php the_date( 'l, F jS, Y' ); ?> at <?php the_time( 'g:ia T' ); ?></time></p>
-						<?php endif; ?>
-					</header>
-					<div class="postBody">
-						<?php the_excerpt(); ?>
-					</div>
-					<footer class="postFooter">
-	
-					</footer>
-				</article>
-	
-				<?php if ( ($wp_query->current_post + 1) < ($wp_query->post_count) ) : ?>
-					<hr /> <!-- Placeholder -->
-				<?php endif; ?>
-	
-			<?php endwhile; ?>
+			<?php while ( have_posts() ) : the_post();
+				get_template_part( 'content', get_post_format() );
+			endwhile; ?>
 			<?php else :
 				esc_html__( 'Sorry, no posts matched your criteria.', 'jldc' );
 		endif; ?>
@@ -87,13 +37,4 @@
 		</div>
 	</main>
 	
-	<footer id="pageFooter" role="contentinfo">
-		<!-- Footer Stuff will go here. Thinking Menu -->
-	</footer>
-	
-	<?php wp_footer(); ?>
-
-</div>
-
-</body>
-</html>
+<?php get_footer(); ?>
