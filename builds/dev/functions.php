@@ -1,6 +1,5 @@
 <?php
 
-// Remove Generator Tag for Security Purposes
 remove_action( 'wp_head', 'wp_generator' );
 
 function jldc_enqueues() {
@@ -44,3 +43,5 @@ function jldc_register_menus() {
 	);
 }
 add_action( 'init', 'jldc_register_menus' );
+
+require( get_stylesheet_directory() . '/_inc/walker.php');
