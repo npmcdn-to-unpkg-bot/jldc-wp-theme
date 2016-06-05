@@ -28,5 +28,5 @@
 </article>
 
 <?php if ( ($wp_query->current_post + 1) < ($wp_query->post_count) ) : ?>
-	<hr /> <!-- Placeholder -->
+	<hr> <!-- Placeholder -->
 <?php endif; ?>
