@@ -24,13 +24,13 @@
 	<header id="pageHeader" role="banner">
 		<?php if ( is_singular() && ! is_front_page() ) : ?>
 			<h6 id="masthead">
-				<a href="<?php bloginfo( 'url' ); ?>">
+				<a href="<?php echo esc_url( home_url() ); ?>">
 					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/_img/logoMasthead.svg" alt="<?php echo bloginfo( 'name' ); ?>">
 				</a>
 			</h6>
 		<?php else : ?>
 			<h1 id="masthead">
-				<a href="<?php bloginfo( 'url' ); ?>">
+				<a href="<?php echo esc_url( home_url() ); ?>">
 					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/_img/logoMasthead.svg" alt="<?php echo bloginfo( 'name' ); ?>">
 				</a>
 			</h1>
