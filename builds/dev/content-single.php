@@ -11,6 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" aria-labelledby="headline-<?php the_ID(); ?>">
 	<header class="postHeader">
 		<h1 id="headline-<?php the_ID(); ?>" class="postHeadline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+		<h2 id="byline-<?php the_ID(); ?>" class="postByline">Written by <?php the_author(); ?></h2>
 		<?php if ( get_the_modified_time() === get_the_time() ) : ?>
 			<p>Posted on <time datetime="<?php the_time( 'c' ); ?>"><?php the_date( 'l, F jS, Y' ); ?> at <?php the_time( 'g:ia T' ); ?></time></p>
 		<?php else : ?>
