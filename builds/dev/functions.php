@@ -47,8 +47,8 @@ function jldc_theme_setup() {
 	function jldc_register_menus() {
 		register_nav_menus(
 			array(
-				'main-menu'     => __( 'Main Menu' ),
-				'footer-menu'   => __( 'Footer Menu' ),
+				'main-menu'     => __( 'Main Menu', 'jldc' ),
+				'footer-menu'   => __( 'Footer Menu', 'jldc' ),
 			)
 		);
 	}
@@ -121,6 +121,15 @@ function jldc_enqueues() {
 	// Enqueue Scripts
 	wp_enqueue_script( 'jldc-header-script' );
 	wp_enqueue_script( 'jldc-font-awesome' );
+
+	/*
+	 * Conditional Enqueues
+	 */
+
+	// Enqueue Comment Reply Script if is a singular
+	if ( is_singular() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'jldc_enqueues' );
 
