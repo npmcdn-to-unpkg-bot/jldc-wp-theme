@@ -29,8 +29,8 @@ class Walker_ARIA_Nav_Menu extends walker {
 	 * @since 3.0.0
 	 *
 	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param int $depth Depth of menu item. Used for padding.
-	 * @param array $args An array of arguments. @see wp_nav_menu()
+	 * @param int    $depth Depth of menu item. Used for padding.
+	 * @param array  $args An array of arguments. @see wp_nav_menu()
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
@@ -45,8 +45,8 @@ class Walker_ARIA_Nav_Menu extends walker {
 	 * @since 3.0.0
 	 *
 	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param int $depth Depth of menu item. Used for padding.
-	 * @param array $args An array of arguments. @see wp_nav_menu()
+	 * @param int    $depth Depth of menu item. Used for padding.
+	 * @param array  $args An array of arguments. @see wp_nav_menu()
 	 */
 	public function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
