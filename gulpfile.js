@@ -95,7 +95,7 @@ project = {
        phpcs: {
             settings: {
                 bin: 'phpcs.bat',
-                standard: 'WordPress-VIP'
+                standard: 'WordPress'
             }
        },
        src: [dirBase + '/**/*.php']
