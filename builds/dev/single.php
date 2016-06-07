@@ -18,3 +18,5 @@ get_header(); ?>
 		esc_html__( 'Sorry, no posts matched your criteria.', 'jldc' );
 	endif; ?>
 </main>
+
+<?php get_footer(); ?>
