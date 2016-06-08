@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts and attachments
+ * The template for displaying all pages
  *
  * @package WordPress
  * @subpackage JLDC_Theme
@@ -9,10 +9,10 @@
 
 get_header(); ?>
 
-<main id="mainContent" role="main">
+<main id="pageContent" role="main">
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post();
-			get_template_part( 'content', 'single' );
+			get_template_part( 'content', 'page' );
 		endwhile; ?>
 	<?php else :
 		esc_html__( 'Sorry, no posts matched your criteria.', 'jldc' );
