@@ -10,7 +10,7 @@
  */
 ?>
 
-<footer id="pageFooter" role="contentinfo">
+<footer id="siteFooter" role="contentinfo">
 	<!-- Footer Stuff will go here. Thinking Menu -->
 </footer>
 

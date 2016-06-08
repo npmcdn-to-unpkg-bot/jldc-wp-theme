@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 
 <div id="wrapper">
-	<header id="pageHeader" role="banner">
+	<header id="siteHeader" role="banner">
 		<?php if ( is_singular() && ! is_front_page() ) : ?>
 			<h6 id="masthead">
 				<a href="<?php echo esc_url( home_url() ); ?>">
