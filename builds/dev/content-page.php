@@ -21,7 +21,4 @@
 	<footer class="pageFooter">
 		<p class="copyright">Copyright &copy; <time datetime="<?php the_time( 'Y' ); ?>"><?php the_time( 'Y' ); ?></time> Jon Liebold. All Rights Reserved.</p>
 	</footer>
-
-	<?php comments_template(); ?>
-
 </article>
