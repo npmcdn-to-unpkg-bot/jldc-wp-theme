@@ -26,7 +26,7 @@ function jldc_theme_setup() {
 	 */
 	load_theme_textdomain( 'jldc', get_stylesheet_directory() . '/_lang' );
 
-	// Add default post and comment RSS feed links to the head element
+	// Add default post and comment RSS feed links to the head element.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -41,9 +41,11 @@ function jldc_theme_setup() {
 	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	//set_post_thumbnail_size( width, height, crop? );
+	set_post_thumbnail_size( 800, 250, false );
 
-	// Initializes two instances for wp_nav_menu()
+	/**
+	 *  Initializes two instances for wp_nav_menu()
+	 */
 	function jldc_register_menus() {
 		register_nav_menus(
 			array(
@@ -106,19 +108,19 @@ remove_action( 'wp_head', 'wp_generator' );
  * @since JLDC Theme 1.0
  */
 function jldc_enqueues() {
-	// Register Theme Styles
-	wp_register_style( 'jldc-styles', get_stylesheet_uri(), '', '1.0.0', 'screen' ); // Main style
+	/* Register Theme Styles */
+	wp_register_style( 'jldc-styles', get_stylesheet_uri(), '', '1.0.0', 'screen' );
 
-	// Enqueue Styles
+	/* Enqueue Styles */
 	wp_enqueue_style( 'jldc-styles' );
 
-	// Register Scripts
+	/* Register Scripts */
 	wp_register_script( 'jldc-header-script', get_stylesheet_directory_uri() . '/_js/jldc-header.js', array( 'jldc-typekit-core' ), null, false );
 	wp_register_script( 'jldc-script', get_stylesheet_directory_uri() . '/_js/jldc-script.js', null, null, true );
 	wp_register_script( 'jldc-typekit-core', 'https://use.typekit.net/yih1lcp.js', null, null, false );
 	wp_register_script( 'jldc-font-awesome', 'https://use.fontawesome.com/72d4cadbab.js', '', '4.6.3', false );
 
-	// Enqueue Scripts
+	/* Enqueue Scripts */
 	wp_enqueue_script( 'jldc-header-script' );
 	wp_enqueue_script( 'jldc-font-awesome' );
 
@@ -126,7 +128,7 @@ function jldc_enqueues() {
 	 * Conditional Enqueues
 	 */
 
-	// Enqueue Comment Reply Script if is a singular
+	// Enqueue Comment Reply Script if is a singular.
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
