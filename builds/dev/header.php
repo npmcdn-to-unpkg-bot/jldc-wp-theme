@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the template file to display the header for the theme.
  *
@@ -9,6 +8,7 @@
  * @subpackage JLDC_Theme
  * @since JLDC Theme 1.0
  */
+
 ?>
 
 <!doctype html>

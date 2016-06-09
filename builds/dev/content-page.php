@@ -6,6 +6,7 @@
  * @subpackage JLDC_Theme
  * @since JLDC Theme 1.0
  */
+
 ?>
 
 <article id="page-<?php the_ID(); ?>" <?php post_class(); ?> role="article" aria-labelledby="headline-<?php the_ID(); ?>">

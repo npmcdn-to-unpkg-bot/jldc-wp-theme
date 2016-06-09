@@ -8,6 +8,7 @@
  * @subpackage JLDC_Theme
  * @since JLDC Theme 1.0
  */
+
 ?>
 
 <footer id="siteFooter" role="contentinfo">
