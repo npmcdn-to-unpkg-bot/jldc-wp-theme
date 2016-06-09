@@ -34,7 +34,7 @@ class Walker_ARIA_Nav_Menu extends walker {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul class=\"sub-menu\" role=\"menu\">\n";
+		$output .= "\n$indent<ul class=\"sub-menu\" role=\"menu\" aria-expanded=\"false\" aria-hidden=\"true\">\n";
 	}
 
 	/**
