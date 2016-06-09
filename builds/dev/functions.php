@@ -57,12 +57,6 @@ function jldc_theme_setup() {
 	add_action( 'init', 'jldc_register_menus' );
 
 	/*
-     * Require external file containing custom navigation walker for
-     * wp_nav_menu() that produces proper ARIA role attributes in menus
-     */
-	require( get_stylesheet_directory() . '/_inc/walker.php' );
-
-	/*
 	 * Set default markup for search form, comment form, and comments
 	 * to be valid HTML5
 	 */
