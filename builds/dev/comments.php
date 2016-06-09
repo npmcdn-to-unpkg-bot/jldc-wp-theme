@@ -6,6 +6,7 @@
  * @subpackage JLDC_Theme
  * @since JLDC Theme 1.0
  */
+
 ?>
 
 <section id="postComments" aria-labelledby="headerComments-<?php the_ID(); ?>">
@@ -13,21 +14,23 @@
 		<h3 id="headerComments-<?php the_ID(); ?>">
 			<?php
 				$comment_count = get_comments_number();
-				if ( 1 === $comment_count ) {
-					printf( _x( '1 Comment on &ldquo;%s&rdquo;', 'Comments Title', 'jldc' ), get_the_title() );
-				} else {
+			if ( 1 === $comment_count ) {
+					printf( esc_html_x( '1 Comment on &ldquo;%s&rdquo;', 'Comments Title', 'jldc' ), get_the_title() );
+			} else {
 					printf(
-						_nx(
-							'%1$s Comment on &ldquo;%2$s&rdquo;',
-							'%1$s Comments on &ldquo;%2$s&rdquo;',
-							$comment_count,
-							'Comments Title',
-							'jldc'
-						),
-						number_format_i18n( $comment_count ),
-						get_the_title()
+						esc_html(
+							_nx(
+								'%1$s Comment on &ldquo;%2$s&rdquo;',
+								'%1$s Comments on &ldquo;%2$s&rdquo;',
+								$comment_count,
+								'Comments Title',
+								'jldc'
+							),
+							number_format_i18n( $comment_count ),
+							get_the_title()
+						)
 					);
-				}
+			}
 			?>
 		</h3>
 
