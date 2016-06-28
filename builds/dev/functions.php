@@ -113,6 +113,8 @@ function jldc_enqueues() {
 	wp_register_script( 'jldc-script', get_stylesheet_directory_uri() . '/_js/jldc-script.js', null, null, true );
 	wp_register_script( 'jldc-typekit-core', 'https://use.typekit.net/yih1lcp.js', null, null, false );
 	wp_register_script( 'jldc-font-awesome', 'https://use.fontawesome.com/72d4cadbab.js', '', '4.6.3', false );
+	wp_register_script( 'jldc-isotope-core', 'https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js', null, null, true);
+	wp_register_script( 'jldc-isotope-settings', get_stylesheet_directory_uri() . '/_js/jldc-isotope.js', array( 'jldc-isotope-core' ), null, true );
 
 	/* Enqueue Scripts */
 	wp_enqueue_script( 'jldc-header-script' );
@@ -121,6 +123,9 @@ function jldc_enqueues() {
 	/*
 	 * Conditional Enqueues
 	 */
+	if ( is_post_type_archive( 'jetpack-portfolio' ) ) {
+		wp_enqueue_script( 'jldc-isotope-settings' );
+	}
 
 	// Enqueue Comment Reply Script if is a singular.
 	if ( is_singular() ) {
