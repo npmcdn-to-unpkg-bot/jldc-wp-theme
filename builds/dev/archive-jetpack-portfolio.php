@@ -9,7 +9,8 @@
 
 get_header(); ?>
 
-<main id="mainContent" role="main">
+<main id="mainContent-<?php the_ID(); ?>" role="main" class="grid">
+
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'content', 'portfolio' );
