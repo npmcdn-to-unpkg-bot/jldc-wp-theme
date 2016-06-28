@@ -2,9 +2,6 @@
 /**
  * The template for displaying all single posts of the portfolio custom post type
  *
- * Template Name: Portfolio Piece
- * Description: A post about a piece in my portfolio
- *
  * @package WordPress
  * @subpackage JLDC_Theme
  * @since JLDC Theme 1.0
