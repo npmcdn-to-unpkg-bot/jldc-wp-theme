@@ -12,8 +12,7 @@ get_header(); ?>
 <main id="mainContent" role="main">
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-			<h3>PORTFOLIO TEST!</h3>
-			<?php get_template_part( 'content', 'page' );
+			<?php get_template_part( 'content', 'portfolio' );
 		endwhile; ?>
 	<?php else :
 		esc_html__( 'Sorry, no posts matched your criteria.', 'jldc' );
