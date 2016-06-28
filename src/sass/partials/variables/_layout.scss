@@ -1,4 +1,7 @@
 /* Breakpoints */
-$bp-mobile: 36rem;
-$bp-tablet: 55rem;
-$bp-desktop: 65rem;
+$bp-mobile-min: screen 36rem;
+$bp-mobile-max: screen (max-width 34.875rem);
+$bp-tablet-min: screen 55rem;
+$bp-tablet-max: screen (max-width 54.875rem);
+$bp-desktop-min: screen 65rem;
+$bp-desktop-max: screen (max-width 64.875rem);
