@@ -2,7 +2,6 @@
 /**
  * The template for displaying single posts of the portfolio custom post type
  *
- *
  * @package WordPress
  * @subpackage JLDC_Theme
  * @since JLDC Theme 1.0
