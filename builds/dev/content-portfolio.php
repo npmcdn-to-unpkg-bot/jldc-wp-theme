@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying single posts
+ * The template for displaying single posts of the portfolio custom post type
+ *
  *
  * @package WordPress
  * @subpackage JLDC_Theme
@@ -8,8 +9,8 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" aria-labelledby="headline-<?php the_ID(); ?>">
+	<h4>PORTFOLIO TEST!</h4>
 	<header class="postHeader">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<?php the_post_thumbnail(); ?>
@@ -28,7 +29,7 @@
 		<?php the_content(); ?>
 	</div>
 	<footer class="postFooter">
-		<p class="listTags"><span class="screen-reader-text">This post is </span>Tagged <?php the_tags( "\040" ); ?></p>
+		<p class="listTags"><span class="screen-reader-text">This post is </span>Tagged <?php the_terms( $post->ID, 'jetpack-portfolio-tag', '', "\040" ); ?></p>
 		<p class="copyright">Copyright &copy; <time datetime="<?php the_time( 'Y' ); ?>"><?php the_time( 'Y' ); ?></time> Jon Liebold. All Rights Reserved.</p>
 	</footer>
 
