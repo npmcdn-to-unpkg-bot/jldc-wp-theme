@@ -15,24 +15,9 @@ html {
   margin: 10px auto;
   padding: 10px;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+  min-height: 95vh;
 }
 
-#siteHeader {
-  max-height: 150px;
-
-
-
-  #masthead {
-    display: block;
-    margin: 0;
-    text-align: left;
-
-    img {
-      max-height: 150px;
-      margin-right: auto;
-    }
-  }
-}
 
 #{headings(1,6)} {
   font-family: $typeface-sansserif;
