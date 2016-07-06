@@ -14,7 +14,7 @@
     "url": "git@github.com:cedon/jldc-wp-theme.git"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
+    "autoprefixer": "^6.3.7",
     "cssnano": "^3.7.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
