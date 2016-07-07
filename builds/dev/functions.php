@@ -118,6 +118,7 @@ function jldc_enqueues() {
 
 	/* Enqueue Scripts */
 	wp_enqueue_script( 'jldc-header-script' );
+	wp_enqueue_script( 'jldc-script' );
 	wp_enqueue_script( 'jldc-font-awesome' );
 
 	/*
