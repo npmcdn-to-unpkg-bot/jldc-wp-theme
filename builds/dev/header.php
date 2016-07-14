@@ -46,6 +46,7 @@
 			'container'         => '',
 			'menu_id'           => 'menuMain',
 			'items_wrap'        => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
+			'walker'            => new Walker_ARIA_Nav_Menu,
 		) )
 		?>
 	</nav>

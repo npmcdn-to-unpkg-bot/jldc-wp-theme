@@ -158,3 +158,5 @@ function jldc_excerpt_read_more() {
 	return '<p><a class="more-link" href="' . get_permalink() . '">Read the Full Article&#8230;</a></p>';
 }
 add_filter( 'excerpt_more', 'jldc_excerpt_read_more' );
+
+require_once get_stylesheet_directory() . '/func-walker.php';
