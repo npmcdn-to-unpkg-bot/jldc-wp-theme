@@ -13,7 +13,7 @@
  * @param string $item Generated menu item.
  * @return bool
  */
-function jldc_walker_issubmenu( string $item ) {
+function jldc_walker_issubmenu( $item ) {
 	$item_array = (array) $item;
 	$classes = $item_array['classes'];
 
@@ -57,7 +57,7 @@ class Walker_ARIA_Nav_Menu extends walker {
 	 * @param int    $depth Depth of menu item. Used for padding.
 	 * @param array  $args An array of arguments. @see wp_nav_menu().
 	 */
-	public function start_lvl( string &$output, $depth = 0, $args = array() ) {
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul class=\"sub-menu\" aria-label=\"submenu\">\n";
 	}
@@ -73,7 +73,7 @@ class Walker_ARIA_Nav_Menu extends walker {
 	 * @param int    $depth Depth of menu item. Used for padding.
 	 * @param array  $args An array of arguments. @see wp_nav_menu().
 	 */
-	public function end_lvl( string &$output, $depth = 0, $args = array() ) {
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
 		$output .= "$indent</ul>\n";
 	}
@@ -92,7 +92,7 @@ class Walker_ARIA_Nav_Menu extends walker {
 	 * @param array  $args   An array of arguments. @see wp_nav_menu().
 	 * @param int    $id     Current item ID.
 	 */
-	public function start_el( string &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -229,7 +229,7 @@ class Walker_ARIA_Nav_Menu extends walker {
 	 * @param int    $depth  Depth of page. Not Used.
 	 * @param array  $args   An array of arguments. @see wp_nav_menu().
 	 */
-	public function end_el( string &$output, $item, $depth = 0, $args = array() ) {
+	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
 		$output .= "</li>\n";
 	}
 } // End Walker_ARIA_Nav_Menu Class
